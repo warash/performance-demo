@@ -15,7 +15,7 @@ export class OptimizedDragAndDropComponent implements OnInit {
   mouseMove$ = new Subject<any>();
   onMouseDown$ = new Subject<any>();
   onMouseUp$ = new Subject<any>();
-  position$ = new BehaviorSubject({ top: 0, left: 0 });
+
 
 
   constructor(private zone: NgZone) {
