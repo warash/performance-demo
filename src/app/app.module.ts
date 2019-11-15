@@ -13,6 +13,10 @@ import { GridSampleComponent } from './drag-and-drop/grid-sample/grid-sample.com
 import { GridModule } from '@progress/kendo-angular-grid';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OptimizedDragAndDropComponent } from './drag-and-drop/optimized-drag-and-drop/optimized-drag-and-drop.component';
+import { TrackByComponent } from './trackby/track-by/track-by.component';
+import { TrackByItemComponent } from './trackby/track-by/track-by-item/track-by-item.component';
+import { RecalculateViewModelAsyncComponent } from './recalculate-view-model-async/recalculate-view-model-async.component';
+import { RecalculateViewModelOnFlyComponent } from './recalculate-view-model-on-fly/recalculate-view-model-on-fly.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,11 @@ import { OptimizedDragAndDropComponent } from './drag-and-drop/optimized-drag-an
     GrandparentChangingStateComponent,
     DrangAndDropSampleComponent,
     GridSampleComponent,
-    OptimizedDragAndDropComponent
+    OptimizedDragAndDropComponent,
+    TrackByComponent,
+    TrackByItemComponent,
+    RecalculateViewModelAsyncComponent,
+    RecalculateViewModelOnFlyComponent
   ],
   imports: [
     BrowserModule,

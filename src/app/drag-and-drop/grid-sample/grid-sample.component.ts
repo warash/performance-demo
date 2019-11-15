@@ -11,7 +11,8 @@ export class GridSampleComponent {
   public gridData: any[] = sampleProducts;
 
   longComputaion() {
-    return this.calculatePrimes(iterations, multiplier);
+    this.calculatePrimes(iterations, multiplier);
+    return 1;
   }
 
   calculatePrimes(iterations, multiplier) {

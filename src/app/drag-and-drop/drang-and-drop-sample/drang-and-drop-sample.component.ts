@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { switchMapTo, takeUntil } from 'rxjs/operators';
+import { finalize, switchMapTo, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-drang-and-drop-sample',

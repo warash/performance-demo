@@ -10,7 +10,6 @@ export class ConnectedChild {
 
   globalState;
 
-  globalState$ = this.store.state$;
 
   constructor(private store: CwisStateStoreService) {
 
