@@ -1,0 +1,25 @@
+import { Component, Input, OnChanges } from '@angular/core';
+import { memoize } from 'lodash';
+
+@Component({
+  selector: 'app-recalculate-view-model-on-fly',
+  templateUrl: './recalculate-view-model-on-fly.component.html',
+  styleUrls: ['./recalculate-view-model-on-fly.component.scss']
+})
+export class RecalculateViewModelOnFlyComponent implements OnChanges {
+
+  @Input() firstName;
+  @Input() lastName;
+
+  get fullName() {
+    return this.calcFullName(this.firstName, this.lastName);
+  }
+
+  calcFullName = memoize((first, last) => {
+    console.log('calculate full name');
+    return `${first} ${last}`;
+  });
+
+  okClicked() {
+  }
+}
