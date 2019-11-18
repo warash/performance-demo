@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, NgZone, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-nev-children',
@@ -7,12 +7,20 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class NevChildrenComponent implements OnInit {
 
+  constructor(private zone: NgZone, private cd: ChangeDetectorRef) {
+  }
+
   counter = 1;
   @ViewChild('button', { static: true }) button;
 
   ngOnInit() {
     // this can be some third party application that wires up events without EventEmitter
-    this.button.nativeElement.addEventListener('click', this.onIncrementInternalState.bind(this));
+    this.button.nativeElement.addEventListener('click', () => {
+      this.zone.run(() => {
+        this.onIncrementInternalState();
+        this.cd.markForCheck();
+      });
+    });
   }
 
   onIncrementInternalState() {

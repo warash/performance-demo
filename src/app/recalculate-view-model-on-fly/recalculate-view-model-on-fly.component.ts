@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-recalculate-view-model-on-fly',
@@ -11,13 +11,13 @@ export class RecalculateViewModelOnFlyComponent implements OnChanges {
   @Input() lastName;
 
 
-  get fullName(){
+  get fullName() {
     console.log('calculate full name');
     return `${this.firstName} ${this.lastName}`;
   }
 
 
-  ngOnChanges(){
+  ngOnChanges() {
 
   }
 
